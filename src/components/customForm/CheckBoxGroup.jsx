@@ -1,34 +1,26 @@
 import React from "react";
 
 function CheckBoxGroup() {
+  const checkboxConfig = [
+    { id: "type1", name: "Issue1" },
+    { id: "type2", name: "Issue2" },
+    { id: "type3", name: "Issue3" },
+    { id: "type4", name: "Issue4" },
+    { id: "type5", name: "Issue5" },
+    { id: "type6", name: "Issue6" },
+  ];
+
   return (
     <div>
       <p>Select Following issues:</p>
-      <br />
-      <label htmlFor="type1">
-        <input name="feedback-type" type="checkbox" /> Issue1
-      </label>{" "}
-      <br />
-      <label htmlFor="type2">
-        <input name="feedback-type" type="checkbox" /> Issue2
-      </label>{" "}
-      <br />
-      <label htmlFor="type3">
-        <input name="feedback-type" type="checkbox" /> Issue3
-      </label>{" "}
-      <br />
-      <label htmlFor="type4">
-        <input name="feedback-type" type="checkbox" /> Issue4
-      </label>{" "}
-      <br />
-      <label htmlFor="type5">
-        <input name="feedback-type" type="checkbox" /> Issue5
-      </label>{" "}
-      <br />
-      <label htmlFor="type6">
-        <input name="feedback-type" type="checkbox" /> Issue6
-      </label>{" "}
-      <br />
+      {checkboxConfig.map((btn) => (
+        <p>
+          <label className="check-btn-label" htmlFor={btn.id}>
+            <input type="checkbox" name="feedback-type" id={btn.id} />{" "}
+            {btn.name}
+          </label>
+        </p>
+      ))}
     </div>
   );
 }

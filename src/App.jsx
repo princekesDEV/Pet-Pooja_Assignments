@@ -20,33 +20,6 @@ const tableConfig = [
   { title: "Age", key: "age", sortable: true, filterable: true },
 ];
 
-const formConfig = {
-  name: {
-    type: "text",
-    label: "Name",
-    placeholder: "Enter your name",
-    validation: { required: true, minLength: 3 },
-  },
-
-  email: {
-    type: "text",
-    label: "Email",
-    placeholder: "Enter your email",
-    validation: {
-      required: true,
-      pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
-    },
-  },
-  textarea: {
-    type: "textarea",
-    label: "Description",
-    placeholder: "Enter Form Description",
-    validation: {
-      required: false,
-    },
-  },
-};
-
 const styles = {
   container: { padding: "20px", fontFamily: "Arial, sans-serif" },
   presetContainer: { display: "flex", gap: "10px" },
@@ -85,10 +58,7 @@ function App() {
             <TableContainer tableData={tableData} tableConfig={tableConfig} />
           }
         />
-        <Route
-          path="/form"
-          element={<FormContainer formConfig={formConfig} />}
-        />
+        <Route path="/form" element={<FormContainer />} />
         <Route
           path="/date-picker"
           element={
